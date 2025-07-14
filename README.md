@@ -2,6 +2,16 @@
 
 A web-based Barbershop Reservation System (BRS) designed to streamline appointment bookings, manage barbers and services, and provide dashboards for both customers and administrators.
 
+## ABOUT US 
+### Group Members:
+1. ADAM HARITH BIN JUMAIN (2023602132)
+2. AMIR HAFIZ BIN AHMAD ZAIDI (2023681786)
+3. IRSYADUDDIN BIN YUSUF (2023693182)
+4. MUHAMMAD ALIF NAJIMI BIN AZMAN (2023830238)
+
+# Website build by:
+Adam Harith bin Jumain
+
 ## Features
 
 - **Customer Booking:** Book appointments online, view available services, and manage your bookings.
