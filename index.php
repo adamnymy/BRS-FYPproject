@@ -7,6 +7,57 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script>
+    // Move hero background script to head for early execution
+    window.addEventListener('load', function() {
+        const images = [
+            "images/barber-interior.webp",
+            "images/barber-services.jpg",
+            "images/classicHaircut-services.webp",
+            "images/contactus.webp",
+            "images/bgbarang.webp",
+            "images/barberpole.webp",
+            "images/guntingkatdinding.jpg",
+            "images/interior-7.jpg"
+        ];
+
+        let current = 0;
+        const bg1 = document.querySelector('.hero-bg-1');
+        const bg2 = document.querySelector('.hero-bg-2');
+        let showingBg1 = true;
+
+        // Check if elements exist
+        if (!bg1 || !bg2) {
+            console.error('Hero background elements not found');
+            return;
+        }
+
+        // Initialize
+        const firstImage = images[0];
+        bg1.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${firstImage}')`;
+        bg1.classList.add('active');
+
+        function crossfadeHeroBg() {
+            current = (current + 1) % images.length;
+            if (showingBg1) {
+                bg2.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${images[current]}')`;
+                bg2.classList.add('active');
+                bg1.classList.remove('active');
+            } else {
+                bg1.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${images[current]}')`;
+                bg1.classList.add('active');
+                bg2.classList.remove('active');
+            }
+            showingBg1 = !showingBg1;
+        }
+
+        // Start the crossfade after a short delay to ensure everything is loaded
+        setTimeout(() => {
+            setInterval(crossfadeHeroBg, 2500);
+        }, 1000);
+    });
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -236,44 +287,6 @@
             </div>
         </div>
     </footer>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const images = [
-        "images/barber-interior.webp",
-        "images/barber-services.jpg",
-        "images/classicHaircut-services.webp",
-        "images/contactus.webp",
-        "images/bgbarang.webp",
-        "images/barberpole.webp",
-        "images/guntingkatdinding.jpg",
-        "images/interior-7.jpg"
-    ];
 
-    let current = 0;
-    const bg1 = document.querySelector('.hero-bg-1');
-    const bg2 = document.querySelector('.hero-bg-2');
-    let showingBg1 = true;
-
-    // Initialize
-    bg1.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${images[0]}')`;
-    bg1.classList.add('active');
-
-    function crossfadeHeroBg() {
-        current = (current + 1) % images.length;
-        if (showingBg1) {
-            bg2.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${images[current]}')`;
-            bg2.classList.add('active');
-            bg1.classList.remove('active');
-        } else {
-            bg1.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${images[current]}')`;
-            bg1.classList.add('active');
-            bg2.classList.remove('active');
-        }
-        showingBg1 = !showingBg1;
-    }
-
-    setInterval(crossfadeHeroBg, 2500);
-});
-</script>
 </body>
 </html>

@@ -29,9 +29,10 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    background-color: #1a1a1a; /* Fallback background color */
 }
 .hero, .hero-content, .hero .hero-content h1, .hero .hero-content p {
-    color: #fff;
+    color: #ffffff;
 }
 .hero .hero-content h1,
 .hero .hero-content p {
@@ -46,17 +47,17 @@ body {
     background-repeat: no-repeat;
     opacity: 0;
     transform: scale(1.08);
-    transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1), transform 2.5s cubic-bezier(0.4,0,0.2,1);
+    transition: opacity 1.2s ease, transform 2.5s ease;
     z-index: 1;
     pointer-events: none;
-    background-color: #222;
-    background-image: url('images/barberbg.jpg'); /* fallback image, make sure this exists */
 }
 .hero-bg.active {
     opacity: 1;
     transform: scale(1);
     z-index: 2;
 }
+
+
 .hero .container, .hero-content {
     position: relative;
     z-index: 3;
